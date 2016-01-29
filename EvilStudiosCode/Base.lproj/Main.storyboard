@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,143 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-CM-UdG">
+                                <rect key="frame" x="20" y="434" width="181" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="bmJ-lf-m8Q"/>
+                                    <constraint firstAttribute="height" constant="66" id="j6y-AV-XmR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bmJ-lf-m8Q"/>
+                                        <exclude reference="j6y-AV-XmR"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="playClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D34-OP-JDA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8d-Pl-bSi">
+                                <rect key="frame" x="399" y="434" width="181" height="36"/>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.30588235289999999" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="1gP-cR-zjA"/>
+                                    <constraint firstAttribute="width" constant="106" id="8Jg-TC-ljW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1gP-cR-zjA"/>
+                                        <exclude reference="8Jg-TC-ljW"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="pauseClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ks-kK-R3o"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wn9-Tn-y89" customClass="MBCircularProgressBarView">
+                                <rect key="frame" x="20" y="63" width="560" height="225"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="gVD-eS-8g2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                        <color key="value" red="0.98748856782913208" green="0.20874562859535217" blue="0.0056685600429773331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showValueString" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="valueDecimalFontSize">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showUnitString" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="unitFontSize">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="unitString" value="%"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                        <color key="value" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpY-AC-bhc">
+                                <rect key="frame" x="209" y="434" width="182" height="36"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Repeat">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="repeatClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wiW-tc-VaT"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qts-UG-Jn4">
+                                <rect key="frame" x="18" y="320" width="564" height="31"/>
+                                <connections>
+                                    <action selector="volumeSlide:" destination="BYZ-38-t0r" eventType="valueChanged" id="Qh7-y0-8JA"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj7-Ll-JhA">
+                                <rect key="frame" x="20" y="382" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.30196078430000001" green="0.64313725489999995" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qts-UG-Jn4" firstAttribute="top" secondItem="Wn9-Tn-y89" secondAttribute="bottom" constant="32" id="2Ga-j6-b8k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yj7-Ll-JhA" secondAttribute="trailing" id="4XE-10-Qm1"/>
+                            <constraint firstItem="bpY-AC-bhc" firstAttribute="width" secondItem="Rob-CM-UdG" secondAttribute="width" id="DlD-ho-1yw"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Rob-CM-UdG" secondAttribute="leading" id="Fo7-83-kvO"/>
+                            <constraint firstItem="Wn9-Tn-y89" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="43" id="Nai-8l-N7C"/>
+                            <constraint firstItem="Wn9-Tn-y89" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PVG-zs-a3P"/>
+                            <constraint firstItem="Yj7-Ll-JhA" firstAttribute="top" secondItem="Qts-UG-Jn4" secondAttribute="bottom" constant="32" id="PcW-Eo-TX3"/>
+                            <constraint firstItem="Qts-UG-Jn4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Pd7-l8-FHv"/>
+                            <constraint firstItem="T8d-Pl-bSi" firstAttribute="leading" secondItem="bpY-AC-bhc" secondAttribute="trailing" constant="8" id="Q0s-2h-UAJ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Yj7-Ll-JhA" secondAttribute="leading" id="QWh-F9-6nk"/>
+                            <constraint firstItem="Qts-UG-Jn4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V2R-kR-bCu"/>
+                            <constraint firstItem="bpY-AC-bhc" firstAttribute="height" secondItem="Rob-CM-UdG" secondAttribute="height" id="VTU-Ln-jmq"/>
+                            <constraint firstItem="bpY-AC-bhc" firstAttribute="leading" secondItem="Rob-CM-UdG" secondAttribute="trailing" constant="8" id="cUJ-62-ETw"/>
+                            <constraint firstItem="T8d-Pl-bSi" firstAttribute="width" secondItem="Rob-CM-UdG" secondAttribute="width" id="dWj-EO-Slx"/>
+                            <constraint firstItem="T8d-Pl-bSi" firstAttribute="height" secondItem="Rob-CM-UdG" secondAttribute="height" id="dvf-ed-Th3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bpY-AC-bhc" secondAttribute="bottom" constant="130" id="jOF-t2-At5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T8d-Pl-bSi" secondAttribute="trailing" id="kRu-TO-lS1"/>
+                            <constraint firstItem="Wn9-Tn-y89" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="taX-Zk-GJa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T8d-Pl-bSi" secondAttribute="bottom" constant="130" id="uOR-K4-Umc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rob-CM-UdG" secondAttribute="bottom" constant="130" id="zn3-R6-Ild"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mbProgressBarView" destination="Wn9-Tn-y89" id="9aV-bV-oZg"/>
+                        <outlet property="pauseButton" destination="T8d-Pl-bSi" id="p8E-tS-aMU"/>
+                        <outlet property="repeatButton" destination="bpY-AC-bhc" id="I3b-gQ-9ni"/>
+                        <outlet property="songNameLabel" destination="Yj7-Ll-JhA" id="P07-LL-MsF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="323"/>
         </scene>
     </scenes>
 </document>
