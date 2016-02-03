@@ -22,10 +22,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.soundManager = [SoundManager sharedManager];
+    
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(receiveSong:) name:@"playingNewSong" object:nil];
     
+    self.soundManager = [SoundManager sharedManager];
     
    
 }

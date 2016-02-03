@@ -33,3 +33,7 @@ the link to the documentation- https://github.com/matibot/MBCircularProgressBar
 
 Which provides an easy way to show the progress and interesting ways to customize its color and the value.
 
+Test - 
+Run the Application hit Play to play the songs. Adjust the volume using the volume slider. Pause the song by hitting the Pause button and it turns to Resume and click resume to unpause. Hit Repeat button at any point of time to repeat the song. 
+
+
